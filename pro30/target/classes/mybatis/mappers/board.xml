@@ -68,7 +68,6 @@
 	</select>
 	
 	<update id="updateArticle" parameterType="java.util.Map">
-		<![CDATA[
 			update t_board
 			set title =#{title},
 			content =#{content}
@@ -76,17 +75,13 @@
 			, imageFileName=#{imageFileName}
 			</if>
 			where articleNO =#{articleNO}
-		]]>
 		
 	</update>
 
 	<delete id="deleteArticle" parameterType="int">
 		<![CDATA[
 			delete from t_board
-			where articleNO in (
-			select articleNO from t_board
-			start with articleNO =#{articleNO}
-			connect by prior articleNO =parentNO)
+			where articleNO =#{articleNO} or parentNO=#{parentNO}
 		]]>
 	</delete>
 

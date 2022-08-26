@@ -4,10 +4,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
-<c:set var="articlesList" value="${articlesMap.articlesList }" />
+<%-- <c:set var="articlesList" value="${articlesMap.articlesList }" />
 <c:set var="totArticles" value="${articlesMap.totArticles }" />
 <c:set var="section" value="${articlesMap.section }" />
-<c:set var="pageNum" value="${articlesMap.pageNum }" />
+<c:set var="pageNum" value="${articlesMap.pageNum }" /> --%>
 <%
  request.setCharacterEncoding("UTF-8");
 %> 
@@ -26,8 +26,8 @@ body{
  <meta charset="UTF-8">
  <title>글목록창</title>
 </head>
-<!-- <script type="text/javascript">
-	function fn_articleFoem(isLogOn,articleForm,loginForm){
+ <script>
+	function fn_articleForm(isLogOn,articleForm,loginForm){
 		if(isLogOn != '' && isLogOn != 'false'){
 			location.href=articleForm;
 		}else{
@@ -35,10 +35,10 @@ body{
 			location.href=loginForm+'?action=/board/articleForm.do'; 
 		}
 	}
-</script> -->
+</script>
 <body>
 	<table align="center" border="1" width="80%" >
-		 <tr height="10" align="center" bgcolor="lightgreen">
+		 <tr height="10" align="center" bgcolor="yellow">
 			 <td>글번호</td>
 			 <td>작성자</td> 
 			 <td>제목</td>
@@ -46,7 +46,7 @@ body{
 			 <td >작성일</td>
 		 </tr>
 		<c:choose>
-			 <c:when test="${empty articlesList}" >
+			 <c:when test="${articlesList == null}" >
 			 <tr height="10">
 				 <td colspan="4">
 					 <p align="center">
@@ -55,7 +55,7 @@ body{
 				 </td> 
 			 </tr>
 			 </c:when>
-			 <c:when test="${!empty articlesList}" >
+			 <c:when test="${articlesList != null}" >
 				 <c:forEach var="article" items="${articlesList }" varStatus="articleNum" >
 				 <tr align="center">
 					<td width="5%">${articleNum.count}</td>
@@ -75,6 +75,8 @@ body{
 							 </c:otherwise>
 						 </c:choose>
 					 </td>
+					 <td>
+					 </td>
 					 <td width="10%"><fmt:formatDate value="${article.writeDate}" /></td> 
 				</tr>
 			 </c:forEach>
@@ -84,7 +86,7 @@ body{
 	
 	<a class="cls1" href="javascript:fn_articleForm('${isLogOn}','${contextPath}/board/articleForm.do','${contextPath }/member/loginForm.do')"> <p class="cls2">글쓰기</p> </a>
 	
-	<div class="cls2">
+	<%-- <div class="cls2">
 		<c:if test="${toArticles != null }">
 			<c:choose>
 				<c:when test="${totAtrticles >100 }"> <!-- 글 개수가 100 초과인경우 -->
@@ -120,8 +122,8 @@ body{
 		</c:if>
 	</div>
 	
-	<br> <br>
-	<a class="cls1" href="${contextPath }/board/articleForm.do"><p class="cls2">글쓰기</p></a>
+	<br> <br> --%>
+	<%-- <a class="cls1" href="${contextPath }/board/articleForm.do"><p class="cls2">글쓰기</p></a> --%>
 	
 </body>
 </html>

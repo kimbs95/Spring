@@ -13,7 +13,7 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
 // 이미지 파일 미리보기 함수 
-	 function readURL(input) {
+ 	 function readURL(input) {
 	 	if (input.files && input.files[0]) {
 	 	var reader = new FileReader();
 	 	reader.onload = function (e) {
@@ -25,13 +25,13 @@
 	 function backToList(obj){
 	 	 obj.action="${contextPath}/board/listArticles.do";
 		 obj.submit();
-	 }
+	 } 
 	</script>
 <title>새글 쓰장~</title>
 </head>
 <body>
 <h1 style="text-align:center">새글 쓰기</h1>
-	 <form name="articleForm" method="post" action="${contextPath}/board3/addArticle.do" enctype="multipart/form-data">
+	 <form name="articleForm" method="post" action="${contextPath}/board/addNewArticle.do" enctype="multipart/form-data">
 		 <table border="0" align="center">
 			 <tr>
 				 <td align="right">글제목: </td>

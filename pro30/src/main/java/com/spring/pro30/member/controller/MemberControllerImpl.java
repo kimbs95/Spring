@@ -35,6 +35,7 @@ public class MemberControllerImpl   implements MemberController {
 		String viewName =(String)request.getAttribute("viewName");
 		ModelAndView mav =new ModelAndView();
 		mav.setViewName(viewName);
+		System.out.println("interceptor에서 온 viewName:"+viewName);
 		return mav;
 	}
 		

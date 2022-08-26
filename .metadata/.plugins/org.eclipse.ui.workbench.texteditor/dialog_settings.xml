@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="item"/>
 			<item value="fileupload"/>
 			<item value="org.apache.tiles"/>
 			<item value="commons-beanutils"/>
@@ -22,13 +23,12 @@
 			<item value="coobird"/>
 			<item value="selectAllMemberList"/>
 			<item value="listMembers"/>
-			<item value="FileUtils"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="-369"/>
+		<item key="DIALOG_X_ORIGIN" value="8"/>
 		<item key="DIALOG_Y_ORIGIN" value="207"/>
 		<item key="DIALOG_WIDTH" value="288"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
