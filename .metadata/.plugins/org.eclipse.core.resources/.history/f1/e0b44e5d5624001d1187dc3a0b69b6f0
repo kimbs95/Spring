@@ -1,0 +1,40 @@
+package com.spring.pro30.board.service;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.spring.pro30.board.vo.ArticleVO;
+
+@Service("boardService")
+@Transactional(propagation = Propagation.REQUIRED)
+public class BoardServiceImpl implements BoardService {
+
+	@Override
+	public List<ArticleVO> listArticles() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int addNesArticle(Map articleMap) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void modArticle(Map articleMap) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeArticle(int articleNO) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.spring.pro27.member.dao;
+
+public interface MemberDAO {
+
+}
