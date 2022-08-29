@@ -51,12 +51,14 @@ public class ViewNameInterceptor extends HandlerInterceptorAdapter {
 		}
 
 		String fileName = uri.substring(begin, end);
+		System.out.println("fileNam111e :"+ fileName);
 		if (fileName.indexOf(".") != -1) {
 			fileName = fileName.substring(0, fileName.lastIndexOf("."));
 			System.out.println(". fileName :"+fileName);
 		}
 		if (fileName.lastIndexOf("/") != -1) {
 			fileName = fileName.substring(fileName.lastIndexOf("/",1), fileName.length());
+//			"/" ,1 은 뒷 인자는 0~ 인덱스까지  그중에 / 
 			System.out.println("/ fileName:"+fileName);
 		}
 		return fileName;
